@@ -6,8 +6,8 @@ import gradio as gr
 # Load dataset
 dataset = load_dataset("muhammadomair678/recipe-dataset", split="train[:1000]")
 recipe_ingredients = [example['prompt'] for example in dataset]
-embedder = SentenceTransformer('all-MiniLM-L6-v2')
-recipe_embeddings = embedder.encode(recipe_ingredients, convert_to_tensor=True, show_progress_bar=True)
+embedder = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
+recipe_embeddings = embedder.encode(recipe_ingredients, convert_to_tensor=True, show_progress_bar=True, batch_size=16)
 
 def suggest_recipes(user_ingredients, top_k=3):
     user_embedding = embedder.encode(user_ingredients, convert_to_tensor=True)
