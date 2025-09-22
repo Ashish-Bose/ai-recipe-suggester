@@ -1,0 +1,5 @@
+transformers
+datasets
+gradio
+sentence-transformers
+torch
