@@ -1,5 +1,5 @@
-transformers
-datasets
-gradio
-sentence-transformers
-torch
+transformers>=4.44.0
+datasets>=3.0.0
+gradio>=4.44.0
+sentence-transformers>=3.1.0
+torch>=2.4.0 --index-url https://download.pytorch.org/whl/cpu
